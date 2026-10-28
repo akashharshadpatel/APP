@@ -5,11 +5,12 @@ enum AppTab: Hashable {
 }
 
 struct MainTabView: View {
+    @Environment(\.services) private var services
     @State private var selectedTab: AppTab = .shop
 
     var body: some View {
         TabView(selection: $selectedTab) {
-            ShopView()
+            ShopView(services: services)
                 .tabItem { Label("Shop", systemImage: "leaf") }
                 .tag(AppTab.shop)
 

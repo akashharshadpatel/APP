@@ -5,6 +5,7 @@ struct TreeHouseApp: App {
     var body: some Scene {
         WindowGroup {
             RootView()
+                .environment(\.services, .live)
         }
     }
 }
